@@ -11,13 +11,21 @@ import java.util.*;
  */
 public class RegistroCCredito {
    ArrayList<CuentaCredito> arregloCC;
+   //Se agrego para la cuenta corriente
+   ArrayList<CuentaCredito> arregloCorriente;
    
    public RegistroCCredito(){
        arregloCC = new ArrayList<>();
+       //Se agrego para la cuenta corriente
+       arregloCorriente = new ArrayList<>();
    }
    
    public void agregarArregloCC(CuentaCredito cc){
        arregloCC.add(cc);
+   }
+   
+   public void agregarCuentaCorriente(CuentaCredito cc){
+       arregloCorriente.add(cc);
    }
    
    public void mostrarArregloCC(){
