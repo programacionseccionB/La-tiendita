@@ -31,4 +31,8 @@ public class Clientes {
     public double getPago() {
         return pago;
     } 
+    
+    public void setPago(double pago){
+        this.pago = pago;
+    }
 }

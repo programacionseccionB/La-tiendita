@@ -31,10 +31,10 @@ public class RegistroCCredito {
    public void mostrarArregloCC(){
        System.out.println("****Listado de transacciones con tarjeta de crédito****");
        for(CuentaCredito cc:arregloCC){
-           System.out.println("Transacción[Crédito]: "+cc.getCodigo()+
+           /*System.out.println("Transacción[Crédito]: "+cc.getCodigo()+
                    " Nit: "+cc.getNit()+" Nombre: "+cc.getNombre()+
                    " No.Tarjeta: "+cc.getTarjeta()+
-                   " Pago: "+cc.getPago());
+                   " Pago: "+cc.getPago());*/
        }
    }
    
@@ -44,4 +44,33 @@ public class RegistroCCredito {
                 .sum();
         return subTotal;
     }
+   
+   public void modificarCliente(int factura, double nuevoHaber){
+       for (int i = 0; i < arregloCorriente.size(); i++) {
+            if (arregloCorriente.get(i).getCodigo() == factura){
+               arregloCorriente.get(i).setHaber(nuevoHaber);
+            }
+       }
+       
+   }
+   
+   public double consultaHaberCliente(int factura){
+       for (int i = 0; i < arregloCorriente.size(); i++) {
+            
+            if (arregloCorriente.get(i).getCodigo() == factura){
+               return arregloCorriente.get(i).getHaber();
+            }
+       }
+       return 0;
+   }
+   
+   public double consultaDebeCliente(int factura){
+       for (int i = 0; i < arregloCorriente.size(); i++) {
+            
+            if (arregloCorriente.get(i).getCodigo() == factura){
+               return arregloCorriente.get(i).getHaber();
+            }
+       }
+       return 0;
+   }
 }
